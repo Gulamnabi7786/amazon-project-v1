@@ -19,7 +19,6 @@ function Header() {
           alt="amazon-logo"
         />
       </Link>
-
       <div className="header__nav1">
         <LocationOnOutlinedIcon />
         <div className="header__option1">
@@ -99,7 +98,7 @@ function Header() {
         {/* Material UI */}
         <SearchIcon className="header__searchIcon" />
       </div>
-
+      H
       <div className="header__nav">
         {/* <img className="header__optionflag" src="India.png" alt="flag"/>
                 <ArrowDropDownIcon /> */}
@@ -124,7 +123,6 @@ function Header() {
           <span className="header__optionLinetwo">Prime</span>
         </div>
       </div>
-
       <Link to="checkout">
         <div className="header__optionBasket">
           <ShoppingCartIcon />
