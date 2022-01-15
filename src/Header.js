@@ -95,7 +95,6 @@ function Header() {
           </select>
         </div>
         <input className="header__searchInput" type="text" />
-        {/* Material UI */}
         <SearchIcon className="header__searchIcon" />
       </div>
       H
@@ -110,19 +109,25 @@ function Header() {
                         <option>Hindi</option>
                     </select>  
                 </div> */}
-        <div className="header__option">
-          <span className="header__optionLineone">Hello</span>
-          <span className="header__optionLinetwo">Sign In</span>
-        </div>
+
+        <Link to="/login">
+          <div className="header__option">
+            <span className="header__optionLineone">Hello</span>
+            <span className="header__optionLinetwo">Sign In</span>
+          </div>
+        </Link>
+
         <div className="header__option">
           <span className="header__optionLineone">Returns</span>
           <span className="header__optionLinetwo">&order</span>
         </div>
+
         <div className="header__option">
           <span className="header__optionLineone">Your</span>
           <span className="header__optionLinetwo">Prime</span>
         </div>
       </div>
+
       <Link to="checkout">
         <div className="header__optionBasket">
           <ShoppingCartIcon />
@@ -131,6 +136,7 @@ function Header() {
           </span>
         </div>
       </Link>
+      
     </div>
   );
 }
