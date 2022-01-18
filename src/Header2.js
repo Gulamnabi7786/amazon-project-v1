@@ -47,7 +47,7 @@ export class Header2 extends Component {
             <span className="header__optionLine2">
               <img
                 className="add__img"
-                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/JupiterT1/phase2_SWM2._CB640205592_.jpg"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GW/JANART22/hero/JanART_SWM_400x39_Shop_now._CB647117819_.jpg"
                 alt="Add__logo"
               />
             </span>

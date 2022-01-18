@@ -5,18 +5,25 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 // import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Header() {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="header">
       <Link to="/">
         <img
           className="header__logo"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="amazon-logo"
+          src="whitelog.png"
+          alt="logo"
         />
       </Link>
       <div className="header__nav1">
@@ -97,7 +104,7 @@ function Header() {
         <input className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
       </div>
-      H
+
       <div className="header__nav">
         {/* <img className="header__optionflag" src="India.png" alt="flag"/>
                 <ArrowDropDownIcon /> */}
@@ -110,10 +117,14 @@ function Header() {
                     </select>  
                 </div> */}
 
-        <Link to="/login">
-          <div className="header__option">
-            <span className="header__optionLineone">Hello</span>
-            <span className="header__optionLinetwo">Sign In</span>
+        <Link to={!user && "/login"}>
+          <div onClick={handleAuthentication} className="header__option">
+            <span className="header__optionLineone">
+              Hello {!user ? "Guest" : user.email}
+            </span>
+            <span className="header__optionLinetwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
 
@@ -136,7 +147,6 @@ function Header() {
           </span>
         </div>
       </Link>
-      
     </div>
   );
 }

@@ -10,29 +10,36 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
-    //
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        //it Successfully created a new user with email and Password
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
     e.preventDefault();
 
     auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((auth) => {
-      //it Successfully created a new user with emial and Password 
-      console.log(auth);
-    })
-    .catch(error => alert(error.message))
-  }
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        //it Successfully created a new user with emial and Password
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <div className="login">
       <Link to="/">
-        <img
-          className="login--logo"
-          src="https://pngimg.com/uploads/amazon/amazon_PNG21.png"
-          alt="amazon-logo"
-        />
+        <img className="login--logo" src="logo.png" alt="Logo"/>
       </Link>
 
       <div className="login--container">

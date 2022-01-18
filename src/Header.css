@@ -9,8 +9,7 @@
 }
 
 .header__logo {
-  width: 100px;
-  margin: 0 20px;
+  width: 160px;
   margin-top: 18px;
   object-fit: contain;
 }
@@ -71,9 +70,10 @@
 
 .header__searchInput {
   padding: 10px;
-  height: 14px;
+  height: 15px;
   border: none;
   width: 100%;
+  align-items: center;
 }
 
 .header__searchIcon {

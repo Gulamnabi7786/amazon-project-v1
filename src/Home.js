@@ -24,19 +24,19 @@ function Home() {
             </div>
             <div className="slide">
               <img
-                src="https://m.media-amazon.com/images/I/71D7LpKHvfL._SX3000_.jpg"
+                src="https://m.media-amazon.com/images/I/71afpk5NZvL._SX3000_.jpg"
                 alt="Homeimg"
               />
             </div>
             <div className="slide">
               <img
-                src="https://m.media-amazon.com/images/I/71kq2r-izfL._SX3000_.jpg"
+                src="https://m.media-amazon.com/images/I/715M2O8sbbL._SX3000_.jpg"
                 alt="Homeimg"
               />
             </div>
             <div className="slide">
               <img
-                src="https://m.media-amazon.com/images/I/7172EFYLBqL._SX3000_.jpg"
+                src="https://m.media-amazon.com/images/I/71Gb3M4kS2L._SX3000_.jpg"
                 alt="Homeimg"
               />
             </div>
