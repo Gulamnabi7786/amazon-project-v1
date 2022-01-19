@@ -1,11 +1,18 @@
 import React from "react";
 import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
+import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
   const [{ cart, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="checkout">
@@ -28,9 +35,9 @@ function Checkout() {
             <a href="login">
               <button className="signInButton">
                 {" "}
-                Sign in to your account{" "}
+                Create new Account{" "}
               </button>
-              <button className="signUpButton"> Sign up now </button>
+              <button onClick={handleAuthentication} className="signUpButton">{user ? "Sign Out" : "Sign In"}</button>
             </a>
             </div>
           </div>

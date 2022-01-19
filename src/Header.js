@@ -105,7 +105,6 @@ function Header() {
           <div className="selected-lang"></div>
           <ul>
             <li>
-              <a className="ar"></a>
             </li>
           </ul>
         </div>
