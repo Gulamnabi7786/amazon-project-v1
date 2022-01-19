@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+// import ImageCarousel from "./ImageCarousel";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -52,6 +53,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      {/* <ImageCarousel /> */}
     </Router>
   );
 }
