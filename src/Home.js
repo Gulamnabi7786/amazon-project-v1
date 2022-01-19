@@ -123,6 +123,27 @@ function Home() {
             price={399}
             image="https://m.media-amazon.com/images/I/41FcBvUHvmL.jpg"
           />
+
+          <Product
+            id="08"
+            title="OnePlus 9R 5G (Lake Blue, 12GB RAM, 256GB Storage)"
+            price={52900}
+            image="https://m.media-amazon.com/images/I/61IwksZ-DGL._SL1500_.jpg"
+          />
+
+          <Product
+            id="09"
+            title="OnePlus Watch Midnight Black: 46mm dial, Smartphone Music (Currently Android only)"
+            price={13999}
+            image="https://m.media-amazon.com/images/I/61FxsUbnavL._SL1500_.jpg"
+          />
+
+          <Product
+            id="10"
+            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core i5-11300H 11th Gen, RTX 3050 4GB Graphics Gaming Laptop"
+            price={71990}
+            image="https://m.media-amazon.com/images/I/81mLxU0CcAL._SL1500_.jpg"
+          />
         </div>
       </div>
     </div>

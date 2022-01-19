@@ -6,7 +6,6 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Header() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -20,11 +19,7 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img
-          className="header__logo"
-          src="whitelog.png"
-          alt="logo"
-        />
+        <img className="header__logo" src="whitelog.png" alt="logo" />
       </Link>
       <div className="header__nav1">
         <LocationOnOutlinedIcon />
@@ -106,16 +101,14 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        {/* <img className="header__optionflag" src="India.png" alt="flag"/>
-                <ArrowDropDownIcon /> */}
-
-        {/* <div className="language_list">
-                    <select name="url" tabindex="0" title="Language-list">
-                        <option><img className="header__optionflag" src="India.png" alt="flag"/></option>
-                        <option>English</option>
-                        <option>Hindi</option>
-                    </select>  
-                </div> */}
+        <div className="language_list">
+          <div className="selected-lang"></div>
+          <ul>
+            <li>
+              <a className="ar"></a>
+            </li>
+          </ul>
+        </div>
 
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
@@ -142,6 +135,7 @@ function Header() {
       <Link to="checkout">
         <div className="header__optionBasket">
           <ShoppingCartIcon />
+          <img src="" alt="" />
           <span className="header__optionLinetwo header__basketcount">
             {cart.length}
           </span>

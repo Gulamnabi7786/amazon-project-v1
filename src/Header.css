@@ -137,3 +137,50 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.selected-lang {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected-lang::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  background-image: url(https://img.icons8.com/color/30/000000/india.png);
+}
+
+.language_list ul{
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: 0pcx 1px 10px rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+}
+
+.language_list ul li {
+  list-style: none;
+}
+
+.language_list ul li a{
+  width: 30px;
+  display: block;
+  padding: 5px 10px;
+}
+
+.language_list ul li a::before{
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-image: url(https://img.icons8.com/color/30/000000/saudi-arabia.png);
+}
+
+.language_list:hover ul{
+  display: block;
+}
