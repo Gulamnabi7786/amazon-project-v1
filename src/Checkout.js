@@ -5,7 +5,6 @@ import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
-  
   const [{ cart, user }, dispatch] = useStateValue();
 
   return (
@@ -16,10 +15,26 @@ function Checkout() {
           src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Jupiter21P1/pay_stripe_desk.png"
           alt="adv"
         />
-        <div>
+        <div className="shoppingDetails">
           <h3> Hello, {user?.email}</h3>
-          <h3 className="checkout--tittle">Your Shopping Details</h3>
-          {cart.map(item => (
+          <div className="checkout--login">
+            <img
+              className="checkouImage"
+              src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg"
+              alt=""
+            />
+            <h3 className="checkout--tittle">Your Shopping Details</h3>
+            <div className="loginButtons">
+            <a href="login">
+              <button className="signInButton">
+                {" "}
+                Sign in to your account{" "}
+              </button>
+              <button className="signUpButton"> Sign up now </button>
+            </a>
+            </div>
+          </div>
+          {cart.map((item) => (
             <CheckoutProduct
               id={item.id}
               title={item.title}

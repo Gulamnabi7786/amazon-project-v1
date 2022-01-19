@@ -1,5 +1,5 @@
 .subtotal {
-  width: 300px;
+  width: 250px;
   height: 100px;
   padding: 20px;
   background-color: #f3f3f3;
@@ -7,6 +7,7 @@
   border-radius: 3px;
   margin: 10px;
   display: flex;
+  color: black;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -21,12 +22,50 @@
 }
 
 .subtotal--gift button {
-  /* background-color: ; */
   width: 100px;
   height: 30px;
   border: 1pc solid;
-  /* border-color: ; */
   color: black;
   border-radius: 5px;
   margin-top: 10px;
 }
+
+.subtotal--gift button:hover {
+  color: black;
+  background-color: #6b6b6b;
+  transition: 0.6s ease;
+}
+
+/* // subtotal.css
+.subtotal{
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subtotal--gift{
+    display: flex;
+    align-items: center;
+}
+
+.subtotal--gift input{
+    margin-right: 5px;
+}
+
+.subtotal button{
+    background-color: #F7CA00;
+    width: 100%;
+    height: 30px;
+    border: 0px solid;
+    border-color: #9b8212;
+    color: black;
+    border-radius: 5px;
+    margin-top: 10px;
+} */

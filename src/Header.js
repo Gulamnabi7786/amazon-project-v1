@@ -24,7 +24,7 @@ function Header() {
       <div className="header__nav1">
         <LocationOnOutlinedIcon />
         <div className="header__option1">
-          <span className="header__optionLineone1">Hello</span>
+          <span className="header__optionLineone1">Hello {!user ? "Guest" : user.email}</span>
           <span className="header__optionLinetwo2">Select your address</span>
         </div>
       </div>
