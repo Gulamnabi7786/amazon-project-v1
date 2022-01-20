@@ -86,15 +86,19 @@ function Login() {
         >
           Create your Amazon Account{" "}
         </button>
+
         <div className="socialMediaLink">
           <a href="https://www.instagram.com/invites/contact/?i=1hhhljxgtvhs2&utm_content=cn4fifb">
-            <InstagramIcon />
+            {/* <InstagramIcon /> */}
+            <img src="https://img.icons8.com/nolan/35/instagram-new.png" alt=""/>
           </a>
           <a href="https://www.facebook.com/gulamnabi.mundas">
-            <FacebookIcon />
+            {/* <FacebookIcon /> */}
+            <img src="https://img.icons8.com/nolan/35/facebook-new.png" alt=""/>
           </a>
           <a href="https://github.com/Gulamnabi7786">
-            <GitHubIcon />
+            {/* <GitHubIcon /> */}
+            <img src="https://img.icons8.com/nolan/35/github.png" alt=""/>
           </a>
         </div>
       </div>

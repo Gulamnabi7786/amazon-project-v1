@@ -1,7 +1,9 @@
 .login {
   height: 100vh;
   display: flex;
+  background: rgba(0, 0, 0, 0.048);
   flex-direction: column;
+  background-color: white;
   /* background-color: black; */
   align-items: center;
 }
@@ -97,10 +99,24 @@
   text-decoration: none;
 }
 
+.socialMediaLink{
+  display: inline;
+}
+
 .socialMediaLink a{
   width: 100%;
-  display: inline;
-  margin-right: 10px;
   color: black;
   align-items: center;
+}
+
+.socialMediaLink img{
+  margin-right: 5px;
+  align-items: center;
+}
+
+.socialMediaLink img:hover{
+  color: #000;
+  border-radius: 50px;
+  transition: 0.7s ease;
+  box-shadow: 0 0 5px #01b9aa, 0 0 25px #01b9aa, 0 0 50px #01b9aa;
 }

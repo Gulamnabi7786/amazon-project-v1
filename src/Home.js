@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "./Footer";
+import Footer2 from "./Footer2";
 import "./Home.css";
 import Product from "./Product";
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -140,10 +142,16 @@ function Home() {
 
           <Product
             id="10"
-            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core i5-11300H 11th Gen, RTX 3050 4GB Graphics Gaming Laptop"
+            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core"
             price={71990}
             image="https://m.media-amazon.com/images/I/81mLxU0CcAL._SL1500_.jpg"
           />
+        </div>
+        <div className="footerBackToTop">
+          <Footer />
+        </div>
+        <div className="footer2">
+          <Footer2 />
         </div>
       </div>
     </div>

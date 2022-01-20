@@ -1,0 +1,32 @@
+.footer {
+  background-color: #232f3e;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  font-family: inherit;
+  position: relative;
+  color: white;
+  bottom: 0;
+  z-index: 10;
+}
+
+.footer_nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer_nav h4 {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: 490px;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.footer_nav img {
+  margin-top: 18px;
+  width: 170px;
+}

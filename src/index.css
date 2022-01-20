@@ -5,7 +5,8 @@
 
 body {
   margin: 0;
-  background-color: #EAEAEA;
+  background-color: #bebebe;
+  /* background-color: rgb(170, 163, 163); */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

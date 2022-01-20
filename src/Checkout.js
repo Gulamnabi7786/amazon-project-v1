@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
 import { auth } from "./firebase";
@@ -32,13 +33,17 @@ function Checkout() {
             />
             <h3 className="checkout--tittle">Your Shopping Details</h3>
             <div className="loginButtons">
-            <a href="login">
-              <button className="signInButton">
-                {" "}
-                Create new Account{" "}
-              </button>
-              <button onClick={handleAuthentication} className="signUpButton">{user ? "Sign Out" : "Sign In"}</button>
-            </a>
+              <a href="login">
+                <button className="signInButton"> Create new Account </button>
+                <Link to={!user && "/login"}>
+                  <button
+                    onClick={handleAuthentication}
+                    className="signUpButton"
+                  >
+                    {user ? "Sign Out" : "Sign In"}
+                  </button>
+                </Link>
+              </a>
             </div>
           </div>
           {cart.map((item) => (

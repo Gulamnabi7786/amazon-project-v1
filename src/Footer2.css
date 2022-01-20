@@ -1,0 +1,22 @@
+.footer2Container {
+  background-color: #18202b;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  font-family: inherit;
+  position: relative;
+  color: white;
+  bottom: 0;
+  z-index: 10;
+}
+
+.footer2socialMediaLink {
+  margin-left: 640px;
+}
+
+.footer2socialMediaLink:hover {
+  color: #000;
+  border-radius: 48px;
+  transition: 0.7s ease;
+  box-shadow: 0 0 5px #01b9aa, 0 0 25px #01b9aa, 0 0 50px #01b9aa;
+}
