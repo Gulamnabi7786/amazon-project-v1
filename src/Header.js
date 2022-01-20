@@ -1,7 +1,8 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -22,9 +23,11 @@ function Header() {
         <img className="header__logo" src="whitelog.png" alt="logo" />
       </Link>
       <div className="header__nav1">
-        <LocationOnOutlinedIcon />
         <div className="header__option1">
-          <span className="header__optionLineone1">Hello {!user ? "Guest" : user.email}</span>
+        <LocationOnOutlinedIcon />
+          <span className="header__optionLineone1">
+            Hello {!user ? "Guest" : user.email}
+          </span>
           <span className="header__optionLinetwo2">Select your address</span>
         </div>
       </div>
@@ -104,8 +107,7 @@ function Header() {
         <div className="language_list">
           <div className="selected-lang"></div>
           <ul>
-            <li>
-            </li>
+            <li></li>
           </ul>
         </div>
 
@@ -133,7 +135,8 @@ function Header() {
 
       <Link to="checkout">
         <div className="header__optionBasket">
-          <ShoppingCartIcon />
+          {/* <ShoppingCartIcon /> */}
+          <LocalMallIcon />
           <img src="" alt="" />
           <span className="header__optionLinetwo header__basketcount">
             {cart.length}

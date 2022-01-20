@@ -9,7 +9,7 @@
 }
 
 .header__logo {
-  width: 160px;
+  width: 170px;
   margin-top: 18px;
   object-fit: contain;
 }
@@ -134,7 +134,7 @@
 }
 
 .header__basketcount {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-right: 10px;
 }
 

@@ -9,26 +9,26 @@ function Subtotal() {
 
   return (
     <div className="subtotalContainer">
-    <div className="subtotal">
-      <CurrencyFormat
-        remderText={(value) => (
-          <>
-            <p>
-              (Subtotal (cart.length)Item):<strong>{value}</strong>
-            </p>
-            <small className="subtotal--gift">
-              <input type="checkbox" /> This order contains a gift
-            </small>
-          </>
-        )}
-        decimalScale={2}
-        value={getCartTotal(cart)}
-        dispalayType={"text"}
-        thousandSeparater={true}
-        prefix={"₹"}
-      />
-      <button>Proceed to Buy</button>
-    </div>
+      <div className="subtotal">
+        <CurrencyFormat
+          remderText={(value) => (
+            <>
+              <p>
+                (Subtotal (cart.length)Item):<strong>{value}</strong>
+              </p>
+              <small className="subtotal--gift">
+                <input type="checkbox" /> This order contains a gift
+              </small>
+            </>
+          )}
+          decimalScale={2}
+          value={getCartTotal(cart)}
+          displayType={"text"}
+          thousandSeparater={true}
+          prefix={"₹"}
+        />
+        <button className="proceedbutton">Proceed to Buy</button>
+      </div>
     </div>
   );
 }
