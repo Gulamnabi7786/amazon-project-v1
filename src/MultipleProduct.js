@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import "./MultipleProduct.css";
-
-function MultipleProduct() {
-    const [{ cart }, dispatch] = useStateValue();
 import { useStateValue } from "./StateProvider";
+
+function MultipleProduct({ id, title, price, image1, image2, image3, image4 }) {
+  const [{ cart }, dispatch] = useStateValue();
 
   console.log("In side cart", cart);
 
@@ -14,23 +14,41 @@ import { useStateValue } from "./StateProvider";
         id: id,
         title: title,
         price: price,
-        image: image,
+        image1: image1,
+        image2: image2,
+        image3: image3,
+        image4: image4,
       },
     });
   };
 
-  return <div className='multipleproduct'>
-      <div className='productInfo'>
-      <p>{title}</p>
+  return (
+    <div className="multipleproduct">
+      <div className="MultiproductInfo">
+        <p>{title}</p>
 
-<p className="product__price">
-  <bold> ₹ </bold>
-  <strong>{price}</strong>
-</p>
+        <p className="muktiproduct__price">
+          <bold> ₹ </bold>
+          <strong>{price}</strong>
+        </p>
 
-<img className="product__img" src={image} alt="....." />
-</div>
-  </div>;
+        <div className="multiproduct__imgs">
+          <div className="row1">
+            <img className="multiproduct__img1" src={image1} alt="....." />
+            <img className="multiproduct__img2" src={image2} alt="....." />
+          </div>
+          <div className="row2">
+            <img className="multiproduct__img3" src={image3} alt="....." />
+            <img className="multiproduct__img4" src={image4} alt="....." />
+          </div>
+        </div>
+      </div>
+      <button className="multiproduct__button" onClick={addToCart}>
+        {" "}
+        Add to cart{" "}
+      </button>
+    </div>
+  );
 }
 
 export default MultipleProduct;
