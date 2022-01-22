@@ -25,7 +25,7 @@ function MultipleProduct({ id, title, price, image1, image2, image3, image4 }) {
   return (
     <div className="multipleproduct">
       <div className="MultiproductInfo">
-        <p>{title}</p>
+        <p><b>{title}</b></p>
 
         <p className="muktiproduct__price">
           <bold> ₹ </bold>

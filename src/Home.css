@@ -32,6 +32,7 @@
 .slider {
   min-width: 100%;
   height: 320px;
+  /* mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0)); */
   overflow: hidden;
 }
 
@@ -46,9 +47,10 @@
 }
 
 .slide {
+  position: relative;
   width: 100%;
   /* height: 100vh; */
-  transition: 2s;
+  transition: 3s;
 }
 
 .slide img {
@@ -56,9 +58,11 @@
   height: 570px;
   object-fit: contain;
   z-index: -1;
+  position: relative;
   margin-bottom: -400px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
 
 /* css for manual side navigation  */
 
@@ -91,11 +95,11 @@
 }
 
 #radio2:checked ~ .first {
-  margin-left: -100%;
+  margin-left: -99%;
 }
 
 #radio3:checked ~ .first {
-  margin-left: -200%;
+  margin-left: -198%;
 }
 
 #radio4:checked ~ .first {

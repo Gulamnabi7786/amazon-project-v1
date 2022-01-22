@@ -1,0 +1,22 @@
+.videoAdd {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  max-height: 900px;
+  min-width: 100px;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.video-js {
+  border-radius: 10px;
+}
+
+.vjs-poster {
+  border-radius: 10px;
+}

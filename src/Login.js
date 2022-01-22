@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from '@mui/icons-material/GitHub';
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import FacebookIcon from "@mui/icons-material/Facebook";
+// import GitHubIcon from '@mui/icons-material/GitHub';
 import "./Login.css";
 
 function Login() {

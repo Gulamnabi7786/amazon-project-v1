@@ -4,6 +4,7 @@ import Footer2 from "./Footer2";
 import "./Home.css";
 import MultipleProduct from "./MultipleProduct";
 import Product from "./Product";
+import VideoAdd from "./VideoAdd";
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 function Home() {
@@ -107,8 +108,8 @@ function Home() {
         <div className="home__row">
         <MultipleProduct
             id="05"
-            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core"
-            price={71990}
+            title="Up to 70% off | Amazon Brands & more"
+            price={719}
             image1="https://images-eu.ssl-images-amazon.com/images/G/31/home_private_label/bhardwl/hpb_gw/xcm_banners_hpb_xgl_a_new_186x116_in-en._SY116_CB647055984_.jpg"
             image2="https://images-eu.ssl-images-amazon.com/images/G/31/home_private_label/bhardwl/hpb_gw/xcm_banners_hpb_xgl_b_186x116_in-en._SY116_CB647056389_.jpg"
             image3="https://images-eu.ssl-images-amazon.com/images/G/31/home_private_label/bhardwl/hpb_gw/xcm_banners_hpb_xgl_d_186x116_in-en._SY116_CB647056393_.jpg"
@@ -116,8 +117,8 @@ function Home() {
           />
           <MultipleProduct
             id="06"
-            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core"
-            price={71990}
+            title="Up to 70% off | Restyle your home & kitchen"
+            price={1990}
             image1="https://images-eu.ssl-images-amazon.com/images/G/31/kitchen/kshrut/janart_kshrut/xcm_banners_2022_janart_qc-186x116-product-badge-yxb4b_372x232_in-en._SY116_CB648749456_.jpg"
             image2="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2022/JANART/OHLGW/DC4_1x._SY116_CB648643844_.jpg"
             image3="https://images-eu.ssl-images-amazon.com/images/G/31/img21/kitchen/JanART22/GW/186x116_2._SY116_CB648692698_.jpg"
@@ -158,13 +159,17 @@ function Home() {
         <div className="home__row">
           <MultipleProduct
             id="11"
-            title="ASUS TUF Dash F15 (2021), 15.6-inch (39.62 cms) FHD 144Hz, Intel Core"
-            price={71990}
+            title="Up to 55% off | Daily essentials"
+            price={7000}
             image1="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FJanuary/JanArt/CONSNEWQC/DesktopATF/Desktop-Gateway_QuadCard_5_1x._SY116_CB647172863_.jpg"
             image2="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FJanuary/JanArt/CONSNEWQC/DesktopATF/Desktop-Gateway_QuadCard_2_1x._SY116_CB647172862_.jpg"
             image3="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FJanuary/JanArt/CONSNEWQC/DesktopATF/Desktop-Gateway_QuadCard_3_1x._SY116_CB647172863_.jpg"
             image4="https://images-eu.ssl-images-amazon.com/images/G/31/img19/Baby/FJanuary/JanArt/CONSNEWQC/DesktopATF/Desktop-Gateway_QuadCard_4_1x._SY116_CB647172863_.jpg"
           />
+        </div>
+
+        <div className="home__row">
+          <VideoAdd />
         </div>
 
         <div className="footerBackToTop">
