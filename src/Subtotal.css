@@ -12,7 +12,7 @@
   justify-content: space-between;
 }
 
-.subtotalContainer .subtotal--gift {
+.subtotal .subtotal--gift {
   display: flex;
   align-items: center;
 }
@@ -21,7 +21,7 @@
   margin-right: 5px;
 }
 
-.subtotalContainer .proceedbutton {
+.subtotal button {
   background: #f7ca00;
   border: 1px solid;
   border-color: #9b8212;
@@ -33,7 +33,7 @@
   color: black;
 }
 
-.subtotalContainer button:hover {
+.subtotal button:hover {
   color: black;
   background-color: hsl(41, 100%, 46%);
   transition: 0.6s ease;

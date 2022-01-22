@@ -14,7 +14,10 @@
 }
 
 .product:hover {
-  transform: scale(1.1);
+  transform: translate(0px, -20px);
+  cursor: pointer;
+
+  /* transform: scale(1.1); */
     transition: 0.4s ease-in-out;
     transition-delay: 0.2s;
     filter: brightness(80%);
