@@ -6,7 +6,7 @@
   font-family: inherit;
   position: relative;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .header__nav2 {
@@ -16,19 +16,18 @@
 }
 
 .header__optionLine1 {
-  font-size: 15px;
+  font-size: 0.938rem;
   font-weight: 600;
-  display: flex;
+  display: inline;
   padding-left: 2px;
 }
 
 .header__optionLine2 {
-  font-size: 14px;
-  display: flex;
+  font-size: 0.875rem;
+  display: inline;
   padding-left: 2px;
 }
 
 .add__img {
   max-width: 400px;
-  right: 0;
 }

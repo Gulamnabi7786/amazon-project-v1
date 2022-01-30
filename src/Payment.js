@@ -1,6 +1,7 @@
 //Payment.js
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
@@ -9,16 +10,40 @@ import { useStateValue } from "./StateProvider";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
-
   const stripe = useStripe();
   const elements = useElements();
-
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
   const [succeeded, setSucceeded] = useState(false);
+  const [ClientSecret, setClientSecret] = useState(true);
 
-  const handleSubmit = (e) => {};
+  useEffect(() => {
+    // To generate the special stripe secret which allows us to charge a customer
+
+    const getClientSecret = async () => {
+      const response = await axios({
+        method: "POST",
+        // stripe expect total amount in base currencies like Rupees to paise
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
+      });
+
+      setClientSecret(response.data.ClientSecret);
+    };
+
+    getClientSecret();
+  }, [cart]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setProcessing(true);
+
+    const payload = await stripe.confirmCardPayment(ClientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
+  };
 
   const handleChange = (event) => {
     setDisabled(event.empty);
@@ -62,7 +87,7 @@ function Payment() {
           </div>
           <div className="payment--details">
             {/* Stripe Secret Code */}
-            <from onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div className="payment---priceContainer">
                 <CurrencyFormat
@@ -85,7 +110,9 @@ function Payment() {
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
-            </from>
+              {/* Errors  */}
+              {error && <div>{error}</div>}
+            </form>
           </div>
         </div>
       </div>
