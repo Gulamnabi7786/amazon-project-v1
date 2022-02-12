@@ -7,6 +7,16 @@ import { auth } from "./firebase";
 // import GitHubIcon from '@mui/icons-material/GitHub';
 import "./Login.css";
 
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
+import "firebase/compat/analytics";
+import { Button } from "@mui/material";
+
+// const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -32,12 +42,17 @@ function Login() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        //it Successfully created a new user with emial and Password
+        //it Successfully created a new user with email and Password
         if (auth) {
           history.push("/");
         }
       })
       .catch((error) => alert(error.message));
+  };
+
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
   };
 
   return (
@@ -87,18 +102,32 @@ function Login() {
           Create your Amazon Account{" "}
         </button>
 
+        <Button
+          variant="outlined"
+          className="sign-inWithGoogle"
+          onClick={signInWithGoogle}
+        >
+          SignIn With Google
+        </Button>
+
         <div className="socialMediaLink">
           <a href="https://www.instagram.com/invites/contact/?i=1hhhljxgtvhs2&utm_content=cn4fifb">
             {/* <InstagramIcon /> */}
-            <img src="https://img.icons8.com/nolan/35/instagram-new.png" alt=""/>
+            <img
+              src="https://img.icons8.com/nolan/35/instagram-new.png"
+              alt=""
+            />
           </a>
           <a href="https://www.facebook.com/gulamnabi.mundas">
             {/* <FacebookIcon /> */}
-            <img src="https://img.icons8.com/nolan/35/facebook-new.png" alt=""/>
+            <img
+              src="https://img.icons8.com/nolan/35/facebook-new.png"
+              alt=""
+            />
           </a>
           <a href="https://github.com/Gulamnabi7786">
             {/* <GitHubIcon /> */}
-            <img src="https://img.icons8.com/nolan/35/github.png" alt=""/>
+            <img src="https://img.icons8.com/nolan/35/github.png" alt="" />
           </a>
         </div>
       </div>

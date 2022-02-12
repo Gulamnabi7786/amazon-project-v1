@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.0.0",
-    "@mui/material": "^5.0.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.4.1",
+    "@mui/material": "^5.4.1",
+    "@mui/styled-engine-sc": "^5.4.1",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.22.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,6 +26,7 @@
     "react-scripts": "4.0.3",
     "react-video-js-player": "^1.1.1",
     "react-video-tag": "0.0.10",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
