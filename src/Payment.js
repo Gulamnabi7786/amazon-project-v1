@@ -1,4 +1,5 @@
 //Payment.js
+import { Button } from "@mui/material";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -116,7 +117,7 @@ function Payment() {
                   prefix={"₹"}
                 />
 
-                <button disabled={processing || disabled || succeeded}>
+                <button variant="contained" disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

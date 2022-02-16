@@ -129,6 +129,9 @@ function Login() {
             {/* <GitHubIcon /> */}
             <img src="https://img.icons8.com/nolan/35/github.png" alt="" />
           </a>
+          <a href="https://www.linkedin.com/in/gulamnabi-moinuddin-mundas-78992b213/">
+            <img src="https://img.icons8.com/nolan/35/linkedin.png" alt="" />
+          </a>
         </div>
       </div>
     </div>
