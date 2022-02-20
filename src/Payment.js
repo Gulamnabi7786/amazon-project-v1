@@ -37,6 +37,8 @@ function Payment() {
     getClientSecret();
   }, [cart]);
 
+  console.log("Client Secret: ", ClientSecret);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -52,7 +54,13 @@ function Payment() {
         setError(null);
         setProcessing(false);
 
-        history.replaceState('/orders')
+        dispatch(
+          {
+            type: 'EMPTY_CART',
+          }
+        )
+
+        history.replaceState("/orders");
       });
   };
 
@@ -117,7 +125,10 @@ function Payment() {
                   prefix={"₹"}
                 />
 
-                <button variant="contained" disabled={processing || disabled || succeeded}>
+                <button
+                  variant="contained"
+                  disabled={processing || disabled || succeeded}
+                >
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

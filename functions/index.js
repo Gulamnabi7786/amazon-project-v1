@@ -27,8 +27,12 @@ app.post("/payments/create", async (request, response) => {
 
   const paymentIntent = await Stripe.paymentIntent.create({
     amount: total, // In paise value not in rupees
-    currency: "inr",
+    currency: "INR",
   });
+
+  response.status(201).send({
+    clientSecret: paymentIntent.client-secret,
+  })
 });
 
 // - Listen command

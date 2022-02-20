@@ -37,7 +37,13 @@ const reducer = (state, action) => {
     case "SET_USER":
       return {
         ...state,
-        user: action.user
+        user: action.user,
+      };
+
+    case "EMPTY_CART":
+      return {
+        ...state,
+        cart: [],
       };
 
     default:
