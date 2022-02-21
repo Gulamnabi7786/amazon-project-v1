@@ -1,3 +1,4 @@
+//index.js from src
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -14,6 +15,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+// var number = [2,4,5,6,7,8];
+
+// const newArray = number.map((x) => x*x); //ES6 => is Fat Arrow Function
+
+// console.log(newArray);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

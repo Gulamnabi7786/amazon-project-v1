@@ -1,8 +1,11 @@
-import React from "react";
-import "./Orders.css";
+//Orders.js
+import React from 'react'
+import './Orders.css';
 
-function Orders() {
-  return <div className="orders"></div>;
+function Order() {
+  return <div className='orders'>
+      <h3>Payment Successful</h3>
+  </div>;
 }
 
-export default Orders;
+export default Order
