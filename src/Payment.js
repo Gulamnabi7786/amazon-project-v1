@@ -1,23 +1,28 @@
 //Payment.js
+
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import React, { useState, useEffect } from "react";
+import instance from "./axios";
+import React, { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
+import { useHistory } from "react-router-dom";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
-import axios from "axios";
 import { getCartTotal } from "./reducer";
 import { useStateValue } from "./StateProvider";
-import { useHistory } from "react-router-dom";
+import { db } from "./firebase";
 
 // Install stripe :
 // npm i @stripe/stripe-js
 // npm i @stripe/react-stripe-js
 
+
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
   const history = useHistory();
+
   const stripe = useStripe();
   const elements = useElements();
+
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
@@ -25,31 +30,53 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState(true);
 
   useEffect(() => {
-    // Generate the special stripe secret which allows us to change a customer
+    // To generate the special stripe secret which allows us to charge a customer
+
     const getClientSecret = async () => {
-      const response = await axios({
+      const response = await instance({
         method: "post",
-        // stripe expect total amount in base currencies like rupees to paise
+        // stripe expect total amount in base currencies like Rupees to paise
         url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
+
       setClientSecret(response.data.clientSecret);
     };
+
     getClientSecret();
   }, [cart]);
+
+  // console.log("Client Secret: ", ClientSecret);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
+
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
         },
       })
+
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_CART",
+        });
+
         history.replace("/orders");
       });
   };
@@ -58,92 +85,6 @@ function Payment() {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
-
-  //Payment.js
-
-  // import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-  // import axios from "axios";
-  // import React, { useEffect, useState } from "react";
-  // import CurrencyFormat from "react-currency-format";
-  // import {Link, useHistory } from "react-router-dom";
-  // import CheckoutProduct from "./CheckoutProduct";
-  // import "./Payment.css";
-  // import { getCartTotal } from "./reducer";
-  // import { useStateValue } from "./StateProvider";
-  // import { db } from "./firebase";
-
-  // function Payment() {
-  //   const [{ cart, user }, dispatch] = useStateValue();
-  //   const history = useHistory();
-
-  //   const stripe = useStripe();
-  //   const elements = useElements();
-
-  //   const [error, setError] = useState(null);
-  //   const [disabled, setDisabled] = useState(true);
-  //   const [processing, setProcessing] = useState("");
-  //   const [succeeded, setSucceeded] = useState(false);
-  //   const [clientSecret, setClientSecret] = useState(true);
-
-  //   useEffect(() => {
-  //     // To generate the special stripe secret which allows us to charge a customer
-
-  //     const getClientSecret = async () => {
-  //       const response = await axios({
-  //         method: "post",
-  //         // stripe expect total amount in base currencies like Rupees to paise
-  //         url: `/payments/create?total=${getCartTotal(cart) * 100}`
-  //       });
-
-  //       setClientSecret(response.data.clientSecret);
-  //     }
-
-  //     getClientSecret();
-  //   }, [cart]);
-
-  //   // console.log("Client Secret: ", ClientSecret);
-
-  //   const handleSubmit = async (event) => {
-  //     event.preventDefault();
-  //     setProcessing(true);
-
-  //     const payload = await stripe.confirmCardPayment(clientSecret, {
-  //         payment_method: {
-  //           card: elements.getElement(CardElement)
-  //         },
-  //       })
-
-  //       .then(({ paymentIntent }) => {
-
-  //         db.collection("users")
-  //           .doc(user?.uid)
-  //           .collection("orders")
-  //           .doc(paymentIntent.id)
-  //           .set({
-  //             cart: cart,
-  //             amount: paymentIntent.amount,
-  //             created: paymentIntent.created,
-  //           });
-
-  //         setSucceeded(true);
-  //         setError(null);
-  //         setProcessing(false);
-
-  //         dispatch({
-  //           type: "EMPTY_CART",
-  //         });
-
-  //         history.replaceState("/orders");
-  //       });
-  //   };
-
-  //   const handleChange = (event) => {
-  //     setDisabled(event.empty);
-  //     setError(event.error ? event.error.message : "");
-  //   };
-
-
-  
 
   return (
     <div className="payment">

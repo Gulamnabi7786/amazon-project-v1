@@ -1,0 +1,8 @@
+/* Orders.css */
+.orders {
+    padding: 20px 80px;
+}
+
+.orders > h3 {
+    margin: 30px 0;
+}
